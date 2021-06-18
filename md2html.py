@@ -124,10 +124,9 @@ def main():
     base = './'
     for file in findAllFile(base, '.md'):
         print("find md file:", file)
-        #print(file.split('/')[-1])
         command = 'marp' + ' ' + file
-        print(command)
-        os.system("os command used:", command)
+        print("os command used:", command)
+        os.system(command)
     
     indexGen()
 
