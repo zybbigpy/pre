@@ -19,12 +19,14 @@ jobs:
           node-version: '14'
       - name: Install marp
         run: npm install -g @marp-team/marp-cli
-      - name: basic test  
+      - name: Run Python
         run: 
           python3 md2html.py
+      - name: Remove gitignore in gh-pages
+        run:
+          rm .gitignore
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: .
-          
