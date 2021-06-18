@@ -111,12 +111,16 @@ def findAllFile(base, type):
 
 def indexGen():
     index = open("index.md", 'w')
-    index.write("## Table \n")
+    index.write("## Slides List \n")
 
-    columns = ["Name","HTML Path"]
-    matrix = [ [file.split('/')[-1],  "["+file+"]"+"("+file+")"] for file in findAllFile('./','.html')]
-    table = Table(columns,matrix)
-    index.write(str(table))
+    # columns = ["Name","HTML Path"]
+    # matrix = [ [file.split('/')[-1],  "["+file+"]"+"("+file+")"] for file in findAllFile('./','.html')]
+    # table = Table(columns,matrix)
+    # index.write(str(table))
+    for file in findAllFile('./', '.html'):
+        string_written = "["+file+"]"+"("+file+")"
+        index.write("-"+" "+string_written+"\n")
+
     index.close()
 
 
