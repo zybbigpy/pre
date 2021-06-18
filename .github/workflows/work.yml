@@ -17,17 +17,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - name: Install marp
         run: npm install -g @marp-team/marp-cli
       - name: basic test  
         run: 
           python3 md2html.py
-      - name: Archive output figs 
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-output-figs
-          path: test/test_fig
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: .
+          
