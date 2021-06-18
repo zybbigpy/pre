@@ -15,4 +15,4 @@ By using Github Actions and Marp, the markdown slides can be deployed on github 
 
 ## Example
 
-See the [Website](zybbigpy.github.io/pre) automatically generated.
+See the [Website](https://zybbigpy.github.io/pre) automatically generated.
