@@ -1,8 +1,9 @@
 ---
-marp: true
+marp: false
 _class: lead
 paginate: true
 backgroundColor: #fff
+date: 123
 ---
 
 # Von Neumann Lattice
@@ -35,7 +36,7 @@ $$
 ---
 Use coherent state defined by 
 $$
-(X+\mathrm{i}Y) \ket{\alpha_{mn}} = z_{mn}\ket{\alpha_{mn}},z_{mn} = (m\omega_x+n\omega_y)a
+(X+\mathrm{i}Y) \ket{\alpha_{mn}} = z_{mn}\ket{\alpha_{mn}},z_{mn} = (m\omega_x+n\omega_y)
 $$
 $$
 \begin{array}{c}
@@ -43,7 +44,7 @@ $$
 A=\frac{\sqrt{\pi}}{a}(X+\mathrm{i} Y), \left[A, A^{\dagger}\right]=1, a= \sqrt{\frac{2\pi\hbar}{eB}}
 \end{array}
 $$
-where $m,n$ are integers and $\omega_x, \omega_y$ are complex numbers satisfy
+where $m,n$ are integers and $\omega_x, \omega_y$ are <font color=red>complex numbers</font> satisfy
 $$
 \Im[\omega_x^*\omega_y] =1
 $$
