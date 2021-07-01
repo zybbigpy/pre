@@ -22,7 +22,7 @@ def main():
     base = './'
     for file in findAllFile(base, '.md'):   
         print("find md file:", file)
-        command = 'marp' + ' ' + file
+        command = 'marp --html' + ' ' + file
         print("os command used:", command)
         ret = os.system(command)
         print("ret should be 0", ret)
