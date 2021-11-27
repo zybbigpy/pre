@@ -7,6 +7,7 @@ date: 11/26/2021
 ---
 
 # Surface State of Bi$_2$Se$_3$
+---
 
 ## Von Neumann Lattice Basis
 
@@ -50,42 +51,3 @@ $z_{mn}$ is a point on the lattice site in the complex plane with an area of the
 
 - For $\tau = i$, square lattice
 - For $\tau = e^{i2\pi/3}$, triangular lattice.
-
-
-
----
-
-<!-- ---
-## Lattice Structure of Bi$_2$Se$_3$
-
-hello
-
-
-
-
----
-## DFT Band Structure
-
-<!-- ![bg right w:15cm](band_dft.png) -->
-some description here.
-
-
-
-
----
-## DOS Analysis
-
-
-
----
-## Low Energy Effective TB Model
-
-
-
----
-## Surface State
-
-
-
----
-## Togological Index -->
