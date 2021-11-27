@@ -15,8 +15,10 @@ date: 11/26/2021
 ---
 
 ## DFT Band Structure
+
 ![bg right w:15cm](band_dft.png)
 some description here.
+
 ---
 
 ## DOS Analysis
@@ -32,3 +34,5 @@ some description here.
 ---
 
 ## Togological Index
+
+---
