@@ -1,9 +1,9 @@
 ---
-marp: true
-theme: gaia
-footer: 'Wangqian Miao 11/26/2021'
+marp: false
+_class: lead
 paginate: true
-date: 11/26/2021
+backgroundColor: #fff
+date: 123
 ---
 
 # Surface State of Bi$_2$Se$_3$
