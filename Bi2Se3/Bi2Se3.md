@@ -20,7 +20,7 @@ date: 123
 ```bash
 echo fuck
 ```
-![bg right w:15cm](band.png)
+![bg right w:15cm](band_dft.png)
 
 
 
@@ -29,18 +29,24 @@ echo fuck
 
 ## DOS Analysis
 
+![bg right w:15cm](pdos.png)
 
 ---
 
 
 ## Effective Tight Binding Hamiltonian
 
+![bg right w:15cm](band.png)
 
 ---
 
 ## Surface State
 
+![bg left  w:15cm](arc.png)
+![bg right w:15cm](spintext.png)
 
 ---
+![bg left  w:15cm](surfdos_l.png)
 
+---
 ## Topogolical Index 
