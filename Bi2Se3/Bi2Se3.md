@@ -1,9 +1,9 @@
 ---
-marp: false
-_class: lead
+marp: true
+theme: gaia
+footer: 'Wangqian Miao 11/26/2021'
 paginate: true
-backgroundColor: #fff
-date: 123
+date: 11/26/2021
 ---
 
 # Surface State of Bi$_2$Se$_3$
@@ -15,11 +15,20 @@ date: 123
 ---
 
 ## DFT Band Structure
+![bg right w:15cm](band_dft.png)
+some description here.
+---
 
 ## DOS Analysis
 
+---
+
 ## Low Energy Effective TB Model
 
+---
+
 ## Surface State
+
+---
 
 ## Togological Index
