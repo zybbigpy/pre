@@ -11,7 +11,7 @@ date: 123
 - Materials Dept, UCSB
 - 11/26/2021
   
-![qr](qr-code.png)
+![20%](qr-code.png)
 
 ---
 ## Background of Bi$_2$Si$_3$
