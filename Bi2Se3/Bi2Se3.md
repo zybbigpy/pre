@@ -10,8 +10,10 @@ date: 123
 - Wangqian Miao
 - Materials Dept, UCSB
 - 11/26/2021
-  
-![20%](qr-code.png)
+
+
+<img src="qr-code.png" style="width: 30%" align="center"/>
+
 
 ---
 ## Background of Bi$_2$Si$_3$
