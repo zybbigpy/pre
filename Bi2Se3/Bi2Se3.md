@@ -5,7 +5,7 @@ paginate: true
 backgroundColor: #fff
 ---
 
-# MTRL 279: First Principle study of Bi$_2$Se$_3$ and its Surface State
+# MTRL 279: First Principle Study of Bi$_2$Se$_3$ and its Surface State
 - Wangqian Miao
 - Materials Dept, UCSB
 - 12/2021
@@ -15,7 +15,7 @@ backgroundColor: #fff
 
 
 ---
-## Background of Bi$_2$Si$_3$
+## Background of Bi$_2$Se$_3$
 
 - Most *robust* 3D TI ever found.Discovered by theory and computation, confirmed later by experiments.
 - A `Hello World` example for the computational study of *real* TI.
@@ -84,15 +84,14 @@ Fermi level mainly from $p$ orbitals from each atom.
   - Tricky Parameters: `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max`.
   - Check spread of wannier functions.
 - ⚠️Check consistency between DFT and TB by plotting Bands.
-
-Blue from DFT. Red from TB.
+- Blue from DFT. Red from TB.
 
 
 ![bg right w:15cm](band.png)
 
 ---
 
-## Fermi Arc, Spin Texture, Surface State
+## Surface State, Fermi Arc and Spin Texture
 
 😀Fortunately, *WannierTools* can help!
 
@@ -142,14 +141,14 @@ $Z_2$ Topological Invariants:
 ## How to Study a Normal TI?
 
 For Computational Material Scientists:
-1. DFT calculation to determine low energy state. (Most of them need SOC). 
+1. DFT calculation to determine low energy bands (Most of them need SOC). 
 2. ⚠️Analyze the band components near Fermi level.
-3. ⚠️*Most Tricky*: Construct low energy TB by Wannier90 through MLWF algorithm. 
+3. ⚠️*Most Tricky*: Construct low energy TB by Wannier90. 
 4. ⚠️Check the consistency between DFT and TB.
 5. Study topological properties of the TB Hamiltonian.
-6. 🎈Predict experiments results. such as Surface state, Fermi Arc, Spin texture...
+6. 🎈Predict experimental results. such as Surface state, Fermi Arc, Spin texture...
 
 For Physicists, several more steps,
-1. Symmetry Analysis, construct low energy $k \cdot p$ model.
+1. Symmetry analysis, construct low energy $k \cdot p$ model.
 2. Topological classification.
 
