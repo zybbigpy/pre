@@ -54,7 +54,7 @@ Fermi level mainly from $p$ orbitals.
 ---
 - ⚠️Use Wannier90 to construct MLWF.
   - `num_bands` same as `NBANDS` in Vasp.
-  - Tricky parameters, `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max` .
+  - Tricky parameters: `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max` .
   - check spread of wannier functions.
 - ⚠️Check consistency between DFT and TB by plotting Bands.
 
@@ -85,11 +85,11 @@ We find Dirac Cone in surface DOS!
 
 $Z_2$ Topological Invariants:
 
-- Theory: *Fu, Kane, Phys. Rev. B **76**, 045302*[^1]
-- Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*
+- Theory: *Fu and Kane, Phys. Rev. B **76**, 045302*.
+- Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*.
 - Conclusion: Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
-[^1]: This is the footnote.
+
 ![bg right w:15cm](topo_index.png)
 
 ---
