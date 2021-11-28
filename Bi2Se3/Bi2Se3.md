@@ -3,7 +3,6 @@ marp: false
 _class: lead
 paginate: true
 backgroundColor: #fff
-date: 123
 ---
 
 # MTRL 279: First Principle study of Bi$_2$Se$_3$ and its Surface State
@@ -12,7 +11,7 @@ date: 123
 - 11/26/2021
 
 
-<img src="qr-code.png" style="width: 30%" align="center"/>
+<img src="qr-code.png" style="width: 3%" align="center"/>
 
 
 ---
@@ -23,7 +22,6 @@ date: 123
 - SOC plays an important role, non magnetical material.
 
 ```bash
-# POSCAR
 Bi2Se3
 1.0
 -2.069  -3.583614  0.000000
