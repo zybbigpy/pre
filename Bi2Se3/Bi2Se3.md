@@ -52,10 +52,10 @@ Fermi level mainly from $p$ orbitals.
 ![bg right w:15cm](pdos.png)
 
 ---
-- ⚠️Use Wannier90 to construct Maximum Localized Wannier Functions.
-  - `num_bands` should be same as `NBANDS` in Vasp.
-  - Most Tricky parameters, `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max` .
-  - check spread of wannier functions through output of Wannier90. (should be localized)
+- ⚠️Use Wannier90 to construct MLWF.
+  - `num_bands` same as `NBANDS` in Vasp.
+  - Tricky parameters, `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max` .
+  - check spread of wannier functions.
 - ⚠️Check consistency between DFT and TB by plotting Bands.
 
 Blue Lines from DFT. Red Dots from TB.
@@ -68,14 +68,16 @@ Blue Lines from DFT. Red Dots from TB.
 ## Fermi Arc, Spin Texture, Surface State
 
 Fortunately, *WannierTools* can help !😀
-![bg left  w:15cm](arc.png)
-![bg right w:15cm](spintext.png)
+
+![bg right w:15cm](arcspin.png)
 
 ---
 
-We see Dirac Cone in surface DOS! (More analysis should be conducted through $k \cdot p$ theory.)
+We find Dirac Cone in surface DOS! 
+- Surfcar
+- Why Dirac type? (should be checked through $k \cdot p$ theory)
 
-![bg left  w:15cm](surfdos_l.png)
+![bg right w:15cm](surfdos_l.png)
 
 ---
 ## Topological Indices
@@ -83,10 +85,11 @@ We see Dirac Cone in surface DOS! (More analysis should be conducted through $k 
 
 $Z_2$ Topological Invariants:
 
-- Theory: *Fu, Kane, Phys. Rev. B **76**, 045302*
+- Theory: *Fu, Kane, Phys. Rev. B **76**, 045302*[^1]
 - Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*
 - Conclusion: Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
+[^1]: This is the footnote.
 ![bg right w:15cm](topo_index.png)
 
 ---
