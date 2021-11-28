@@ -8,10 +8,10 @@ backgroundColor: #fff
 # MTRL 279: First Principle study of Bi$_2$Se$_3$ and its Surface State
 - Wangqian Miao
 - Materials Dept, UCSB
-- 11/26/2021
+- 12/2021
 
 
-<img src="qr-code.png" style="width: 3%" align="center"/>
+<img src="qr-code.png" style="width: 30%" align="center"/>
 
 
 ---
