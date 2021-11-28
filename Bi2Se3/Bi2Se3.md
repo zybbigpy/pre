@@ -6,7 +6,7 @@ backgroundColor: #fff
 date: 123
 ---
 
-# MTRL 279: Surface State of Bi$_2$Se$_3$
+# MTRL 279: First Principle study of Bi$_2$Se$_3$ and its Surface State
 - Wangqian Miao
 - Materials Dept, UCSB
 - 11/26/2021
@@ -15,7 +15,7 @@ date: 123
 
 ## Band Structure from DFT
 
-- SOC Calculation.
+- SOC calculation needed, non magnetic.
 - PBE Functional (Band Gap problem at $\Gamma$ point, HSE?)
 - Consistent well with Nature Physics **5**, 438–442 (2009)
 - Conclusion: Bi$_2$Se$_3$ is a **Bulk Insulator**.
@@ -42,9 +42,9 @@ ISYM    = -1
 *Physicists prefer a concrete Hamiltonian!*
 
 Construct Low energy TB model:
-- Analyze the band component near Fermi level.
+- Analyze the band component near Fermi level, `LORBIT=11` in VASP.
 - For Bi$_2$Se$_3$, the contribution near
-Fermi level mainly from $p$ orbitals.
+Fermi level mainly from $p$ orbitals from each atom.
 - ⚠️Help determine projection orbitals in Wannier90.
 
 
@@ -53,7 +53,7 @@ Fermi level mainly from $p$ orbitals.
 
 ---
 - ⚠️Use Wannier90 to construct MLWF.
-  - `num_bands` same as `NBANDS` in Vasp.
+  - `num_bands` same as `NBANDS` in VASP.
   - Tricky parameters: `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max` .
   - check spread of wannier functions.
 - ⚠️Check consistency between DFT and TB by plotting Bands.
@@ -67,17 +67,34 @@ Blue Lines from DFT. Red Dots from TB.
 
 ## Fermi Arc, Spin Texture, Surface State
 
-Fortunately, *WannierTools* can help !😀
+Fortunately, *WannierTools* can help!😀
 
-![bg right w:15cm](arcspin.png)
+We find Dirac Cone in surface DOS! 
+- Study (0,0,1) surface
+  ```Fortran
+  SURFACE !define two k vecs
+  1 0 0
+  0 1 0
+  ```
+- Why Dirac type? (should be checked through $k \cdot p$ theory)
+- Bulk insulator, However surface conducting states exist!
+
+![bg right w:15cm](surfdos_l.png)
 
 ---
 
 We find Dirac Cone in surface DOS! 
-- Surfcar
-- Why Dirac type? (should be checked through $k \cdot p$ theory)
+- Study (0,0,1) surface
+  ```Fortran
+  SURFACE !define two k vecs
+  1 0 0
+  0 1 0
+  ```
+- Why Dirac type? (should be checked through $k \cdot p$ theory, symmetry protected)
+- Bulk insulator, However **surface conducting states exist**!
+- Fermi arc, spin texture (We have SOC).
 
-![bg right w:15cm](surfdos_l.png)
+![bg right w:15cm](arcspin.png)
 
 ---
 ## Topological Indices
@@ -87,6 +104,7 @@ $Z_2$ Topological Invariants:
 
 - Theory: *Fu and Kane, Phys. Rev. B **76**, 045302*.
 - Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*.
+- Wannier Charge Center at TR Invariant $k$ points shows $Z_2=(1;000)$.
 - Conclusion: Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
 
