@@ -93,24 +93,24 @@ Fermi level mainly from $p$ orbitals from each atom.
 
 ## Surface State, Fermi Arc and Spin Texture
 
-😀Fortunately, *WannierTools* can help!
+😀 *WannierTools* can help!
 
-Find Dirac Cone through LDOS on (0,0,1) surface!
- 
+Find **Dirac Cone** through LDOS on (0,0,1) surface!
+
 - 
   ```Fortran
   SURFACE !define two k vecs
   1 0 0
   0 1 0
   ```
-- Why Dirac type? (should be checked through $k \cdot p$ theory)
-- Bulk insulator,however **surface conducting states** exist!
+- Why Dirac? (check through $k \cdot p$ theory)
+- Bulk insulator, However **surface states exist** in a slab!
 
 ![bg right w:15cm](surfdos_l.png)
 
 ---
 
-Find Dirac Cone through LDOS on (0,0,1) surface! 
+Find **Dirac Cone** through LDOS on (0,0,1) surface! 
 
 -
   ```Fortran
@@ -118,17 +118,17 @@ Find Dirac Cone through LDOS on (0,0,1) surface!
   1 0 0
   0 1 0
   ```
-- Why Dirac type? (should be checked through $k \cdot p$ theory, symmetry protected)
+- Why Dirac? (check through $k \cdot p$ theory, symmetry protected)
 - Bulk insulator, However **surface states exist** in a slab!
-- Fermi arc, spin texture (have SOC).
-- ARPES experiment
+- Fermi arc, spin texture(SOC).
+- ARPES experiment.
 
-![bg right w:13cm](arcspin.png)
+![bg right w:15cm](arcspin.png)
 
 ---
 ## Topological Indices (Some Physics)
 
-$\mathcal{Z}_2$ Topological Invariants (TR & Inversion exist):
+$\mathcal{Z}_2$ Topological Invariants (TR & Inversion symmetry exist):
 
 - Theory: *Fu and Kane, Phys. Rev. B **76**, 045302*.
 - Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*.
@@ -136,7 +136,7 @@ $\mathcal{Z}_2$ Topological Invariants (TR & Inversion exist):
 - Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
 
-![bg right w:13cm](topo_index.png)
+![bg right w:15cm](topo_index.png)
 
 ---
 
