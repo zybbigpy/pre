@@ -17,7 +17,7 @@ backgroundColor: #fff
 ---
 ## Background of Bi$_2$Se$_3$
 
-- Most *robust* 3D TI ever found.Discovered by theory and computation, confirmed later by experiments.
+- Most *robust* 3D TI ever found. Discovered by theory and computation, confirmed later by experiments.
 - A `Hello World` example for the computational study of *real* TI.
 - SOC plays an important role, non magnetical material. Space Group $D_{3d}^5$.
 
@@ -44,8 +44,8 @@ Direct
 
 - SOC calculation needed.
 - PBE Functional (Band Gap problem at $\Gamma$ point, HSE?)
-- Consistent well with Nature Physics **5**, 438–442 (2009)
-- Conclusion: Bi$_2$Se$_3$ is a **Bulk Insulator**.
+- Result consistent with Nature Physics **5**, 438–442 (2009)
+- Bi$_2$Se$_3$ is a **Bulk Insulator**.
 
 ```bash
 ISPIN  = 2
@@ -80,9 +80,9 @@ Fermi level mainly from $p$ orbitals from each atom.
 
 ---
 - ⚠️Use Wannier90 to construct MLWF.
-  - `num_bands` same as `NBANDS` in VASP.
+  - `num_wann=30`, `num_bands` same as `NBANDS` in VASP.
   - Tricky Parameters: `dis_win_min`,  `dis_win_max`,  `dis_froz_min`, `dis_froz_max`.
-  - Check spread of wannier functions.
+  - Check spread of Wannier functions.
 - ⚠️Check consistency between DFT and TB by plotting Bands.
 - Blue from DFT. Red from TB.
 
@@ -95,7 +95,7 @@ Fermi level mainly from $p$ orbitals from each atom.
 
 😀Fortunately, *WannierTools* can help!
 
-Find Dirac Cone in surface DOS! 
+Find Dirac Cone in LDOS! 
 - Study (0,0,1) surface through:
   ```Fortran
   SURFACE !define two k vecs
@@ -117,21 +117,21 @@ Find Dirac Cone in surface DOS!
   0 1 0
   ```
 - Why Dirac type? (should be checked through $k \cdot p$ theory, symmetry protected)
-- Bulk insulator, However **surface conducting states exist**!
+- Bulk insulator, However **surface states exist** in a slab!
 - Fermi arc, spin texture (have SOC).
+- ARPES experiment
 
 ![bg right w:15cm](arcspin.png)
 
 ---
 ## Topological Indices (Some Physics)
-*Symmetry plays an important role!*
 
-$Z_2$ Topological Invariants (TR & Inversion):
+$\mathcal{Z}_2$ Topological Invariants (TR & Inversion exist):
 
 - Theory: *Fu and Kane, Phys. Rev. B **76**, 045302*.
 - Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*.
-- Wannier Charge Center at TR Invariant $k$ points shows $Z_2=(1;000)$.
-- Conclusion: Bi$_2$Se$_3$ is a **Strong 3D TI**.
+- Wannier Charge Center evolution at TR Invariant Momentum points shows $\mathcal{Z}_2=(1;000)$.
+- Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
 
 ![bg right w:15cm](topo_index.png)
