@@ -95,8 +95,8 @@ Fermi level mainly from $p$ orbitals from each atom.
 
 😀Fortunately, *WannierTools* can help!
 
-Find Dirac Cone in LDOS! 
-- Study (0,0,1) surface through:
+Find Dirac Cone through LDOS on (0,0,1) surface! 
+- 
   ```Fortran
   SURFACE !define two k vecs
   1 0 0
@@ -109,8 +109,8 @@ Find Dirac Cone in LDOS!
 
 ---
 
-Find Dirac Cone in surface DOS! 
-- Study (0,0,1) surface
+Find Dirac Cone through LDOS on (0,0,1) surface! 
+-
   ```Fortran
   SURFACE !define two k vecs
   1 0 0
@@ -121,7 +121,7 @@ Find Dirac Cone in surface DOS!
 - Fermi arc, spin texture (have SOC).
 - ARPES experiment
 
-![bg right w:15cm](arcspin.png)
+![bg right w:13cm](arcspin.png)
 
 ---
 ## Topological Indices (Some Physics)
@@ -134,7 +134,7 @@ $\mathcal{Z}_2$ Topological Invariants (TR & Inversion exist):
 - Bi$_2$Se$_3$ is a **Strong 3D TI**.
 
 
-![bg right w:15cm](topo_index.png)
+![bg right w:13cm](topo_index.png)
 
 ---
 
