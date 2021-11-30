@@ -19,7 +19,7 @@ backgroundColor: #fff
 
 - Most *robust* 3D TI ever found.Discovered by theory and computation, confirmed later by experiments.
 - A `Hello World` example for the computational study of *real* TI.
-- SOC plays an important role, non magnetical material.
+- SOC plays an important role, non magnetical material. Space Group $D_{3d}^5$.
 
 ```bash
 Bi2Se3
@@ -126,7 +126,7 @@ Find Dirac Cone in surface DOS!
 ## Topological Indices (Some Physics)
 *Symmetry plays an important role!*
 
-$Z_2$ Topological Invariants:
+$Z_2$ Topological Invariants (TR & Inversion):
 
 - Theory: *Fu and Kane, Phys. Rev. B **76**, 045302*.
 - Numerics: *Yu, Dai and etc, Phys. Rev. B **84**, 075119*.
