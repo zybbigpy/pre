@@ -95,7 +95,8 @@ Fermi level mainly from $p$ orbitals from each atom.
 
 😀Fortunately, *WannierTools* can help!
 
-Find Dirac Cone through LDOS on (0,0,1) surface! 
+Find Dirac Cone through LDOS on (0,0,1) surface!
+ 
 - 
   ```Fortran
   SURFACE !define two k vecs
@@ -110,6 +111,7 @@ Find Dirac Cone through LDOS on (0,0,1) surface!
 ---
 
 Find Dirac Cone through LDOS on (0,0,1) surface! 
+
 -
   ```Fortran
   SURFACE !define two k vecs
