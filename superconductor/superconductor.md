@@ -15,17 +15,18 @@ backgroundColor: #fff
 ---
 ## Discovery of Superconductivity
 
-- Discovered by *Kamerlingh Onnes* in 1911 during first low temperature measurements to liquefy helium. (1913 Nobel Prize in Physics.)
+- 🏅 1913 Nobel Prize in Physics.
+- Discovered by *Kamerlingh Onnes* in 1911 during first low temperature measurements to liquefy helium. 
 - Whilst measuring the resistivity of pure Hg he noticed that the electrical resistance dropped to zero at 4.2K.
 - In 1912 he found that the resistive state is restored in a magnetic field or at high transport currents. 
 
-![bg right w:15cm](1.png)
+![bg right w:8cm](1.png)
 
 
 
 ---
 
-## General Properties
+## General Properties 
 
 
 1. 🚩 Zero resistance (Kammerlingh-Onnes, 1911) at $T<T_c$. The temparature $T_c$ is critical one.
@@ -34,7 +35,11 @@ $H_c$ which is also called a cirtical one. (Kammerlingh-Onnes, 1914)
 3. 🚩 Magnetic filed does not penetrate superconductor. (Meissner 1933)
 
 
-
 ---
 
+##
 
+![](2.png)
+
+- Transition temperatures (K) and critical fields are generally low.
+- Metals with the highest conductivities are not superconductors. 
