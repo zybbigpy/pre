@@ -52,3 +52,14 @@ $H_c$ which is also called a cirtical one. (Kammerlingh-Onnes, 1914)
 
 ---
 
+## Josephson Effect
+
+-  An example of a macroscopic quantum phenomenon.
+-  Consists of thin layer of insulating material placed between two superconductors
+-  Insulator acts as a barrier to the flow 
+of electrons.
+- Quantum tunnelling occurs when a pair of electron moves through a space at junction caused 
+josephson current.
+![](4.png)
+---
+
