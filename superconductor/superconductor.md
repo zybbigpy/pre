@@ -8,7 +8,7 @@ backgroundColor: #fff
 # Superconductivity and Superconductor
 - Wangqian Miao
 - Materials Dept, UCSB
-- 12/2021
+- 02/2022
 
 
 
@@ -60,6 +60,6 @@ $H_c$ which is also called a cirtical one. (Kammerlingh-Onnes, 1914)
 of electrons.
 - Quantum tunnelling occurs when a pair of electron moves through a space at junction caused 
 josephson current.
-![](4.png)
+![width:10 height:6cm](4.png)
 ---
 
