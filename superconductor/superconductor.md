@@ -77,3 +77,36 @@ $H_c$ which is also called a cirtical one. (Kammerlingh-Onnes, 1914)
 - Precision metrology, the *NIST* (National Institute of Standards and Technology) standard for one volt is achieved by an array of 20,208 Josephson junctions in series.
 
 ![bg right 75%](6.jpg)
+
+---
+
+## Superconducting Quantum Interference Devices (1)
+
+- No magnetic field $B$.
+- Recap: Electrons tunnel through the junctions.
+- Current made to flow around 
+the loop through both Josephson junctions, and 
+$I_a = I_b = \frac{1}{2}I$ 
+
+![bg right 75%](SQUID.png)
+
+---
+
+## Superconducting Quantum Interference Devices (1)
+
+- Add magnetic field $B$.
+- Due to superconductivity, Magnetic flux $\Phi=BS$ shoud be:
+$\Phi = n \Phi_0$
+- Magnetic field through the loop causes a phase difference between electrons, affects current through the loop, then $I_a \neq I_b$.
+- Potential difference across the loop can be detected.
+![bg right 75%](SQUID.png)
+
+---
+
+## Application: Biomagnetism
+
+
+- Processes in animals produce small magnetic fields, $10^{-12} – 10^{-9}$ Tesla.
+- Fields associated with neural activity can be imaged by machines based on an array of SQUIDs
+- Physics principle behind MRI.
+![bg right 75%](7.png)
