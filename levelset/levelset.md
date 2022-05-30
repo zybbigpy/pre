@@ -144,7 +144,7 @@ $$
 |![](gourd.bmp) |  ![gourd.bmp](https://i.ibb.co/18ZXw3Y/Figure-2.png) | ![gourd.bmp](https://i.ibb.co/G5kqjVc/Figure-1.png) |
 
 
-[Video](./myvideo.html)
+[Video](https://zybbigpy.github.io/pre/myvideo.html)
 
 ---
 
@@ -152,3 +152,4 @@ $$
 | Image | Contour |Final Grid |
 |----------|:-------------:|------:|
 | ![](twocells.bmp) | ![gourd.bmp](https://i.ibb.co/4MgG7fD/1-Figure-2.png)| ![gourd.bmp](https://i.ibb.co/0YNX97S/1-Figure-1.png)|
+[Video](https://zybbigpy.github.io/pre/twocell.html)

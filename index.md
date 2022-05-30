@@ -4,5 +4,7 @@
 - [dgroup.html](./dgroup/dgroup.html)
 - [von_neumann.html](./von_neumann/von_neumann.html)
 - [levelset.html](./levelset/levelset.html)
+- [myvideo.html](./levelset/myvideo.html)
+- [twocell.html](./levelset/twocell.html)
 - [superconductor.html](./superconductor/superconductor.html)
 - [ling2g.html](./ling2G/ling2g.html)
