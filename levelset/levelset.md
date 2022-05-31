@@ -36,6 +36,7 @@ $F$ is the speed function controls the motion of $C$, $\mathcal{N}$ is the inwar
 ---
 # The Level Set Method
 
+<!-- _footer: V. Caselles, 1993. R. Malladi, 1995. -->
 The curve (or the interface) evolves according to:
 $$\frac{\partial C(s, t)}{\partial t} = F \mathcal{N}$$
 At all times the interface is the zero level set of $\phi$:
@@ -55,22 +56,23 @@ We need to maintain the LSF in a good condition, not too steep and too flat.
 **Problem**: Speed function $F$ does not have a component for preserving the LSF as a signed distance function.
 
 **What the authors do**: Design a *general variational level set formulation*:
-  - Instead of design $F$ $\rightarrow$ use a energy variantional scheme
-    - Distance regularization term $\rightarrow$ keep the property of LSF.
-    - External Energy term $\rightarrow$ guide the motion of zero level set.
+  - Instead of design $F$ $\rightarrow$ use a **energy variantional scheme**.
+    * Distance regularization term $\rightarrow$ keep the property of LSF.
+    * External Energy term $\rightarrow$ guide the motion of zero level set.
 
 ---
 
 # Energy Formulation With Distance Regulation
 
-Let $\phi$ to be a level set defined on a domain $\Omega$, an energy funcitonal $E(\phi)$:
+  Let $\phi$: a level set defined on a domain $\Omega$. $E(\phi)$: an energy funcitonal.
 $$E(\phi) = \mu R_p(\phi) + E_{\mathrm{ext}}(\phi)$$
-- Distance regularization term $R_p(\phi)\rightarrow$ keep the property of LSF. $\mu > 0$
+- Distance regularization term $R_p(\phi)\rightarrow$ keep the property of LSF. ($\mu > 0$)
   $$ R_p(\phi) =\int_\Omega p(|\nabla\phi|) \,\mathrm{d}\mathbf{x}$$
   $p$ is energy density function.
 - External Energy term $E_{\mathrm{ext}}(\phi), \rightarrow$ guide the motion of zero level set.
-- Minimize $E(\phi)$ is to find the steady state solution of the gradient flow equation
+- Minimize $E(\phi)$ is to find the steady state solution of the gradient flow equation:
   $$ \boxed{\partial_t \phi = -\partial_\phi E}$$
+* **Note**: $\partial_\phi E$ is the steepest descent direction of the functional $E(\phi)$. The gradient flow is also called *steepest descent flow or gradient descent flow*.
 
 ---
 
@@ -83,20 +85,24 @@ Expressed in the form of a diffusion equation:
 $$ \phi_t = \mathrm{div} (D\nabla\phi)$$
 Diffusion rate $D= \mu d_p(|\nabla \phi|)$:
 - $d_p(s) \equiv {p'(s)}/{s}$.
-- $D$ is positive, diffusion is forward diffusion $\rightarrow$ decreases $|\nabla \phi|$.
-- $D$ is negative, diffusion is backward diffusion $\rightarrow$ increases $|\nabla \phi|$. 
-- Force it to be close to one of the minimum points of the potential function $p(s)$
+* **Forward-and-Backward (FAB) diffusion**: 
+  * $D$ is positive, diffusion is **forward diffusion** $\rightarrow$ **decreases** $|\nabla \phi|$.
+  * $D$ is negative, diffusion is **backward diffusion** $\rightarrow$ **increases** $|\nabla \phi|$. 
+  * Force $|\nabla \phi|$ to be close to one of the minimum points of the potential function $p(s)$
 
 
 ---
 # How to design energy density function $p$
 
-* A naive choice $p_s = s^2/2$
+* A naive choice: $p_s = s^2/2$
   - A strong smoothing effect, flatten the LSF, cannot maintain signed distance property $|\nabla\phi|=1$.
-* Another choice $p_s = (s-1)^2/2$
-    - $|\nabla \phi|>1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is positive, diffusion is forward, decreases  $|\nabla \phi|$.
-    - $|\nabla \phi|<1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is negative, diffusion is backward, increases  $|\nabla \phi|$.
-    - Problem: (Unbounded) $\mu d_p(|\nabla \phi|) = \mu(1-(1/|\nabla\phi|)$ goes to negative infinity when $|\nabla\phi|\rightarrow 0$
+* Another choice: $p_s = (s-1)^2/2$
+    - $|\nabla \phi|>1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is positive.
+      -  diffusion is forward, decreases  $|\nabla \phi|$.
+    - $|\nabla \phi|<1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is negative.
+      -  diffusion is backward, increases  $|\nabla \phi|$.
+    * **Problem: (Unbounded)** 
+      * $\mu d_p(|\nabla \phi|) = \mu(1-(1/|\nabla\phi|)$ goes to negative infinity when $|\nabla\phi|\rightarrow 0$.
 
 ---
 # <!-- fit --> Double Well Energy Density Function
@@ -126,25 +132,32 @@ Design a double well energy density function $p(s)$:
 
 ---
 # Applicaiton: Edge Based Image Segmentation
-* $I$: an image on a domain $\Omega$. $g$: an edge Indicator function to smooth image: 
-$$
-g \equiv  \frac{1}{1+ |\nabla G_\sigma * I|}
-$$
-* Total Energy functional $E_\phi$ 
+
+<!-- _footer: 'Caselles et al. 93/97, Caselles et al. 95, Kichenassamy et al. 95' 
+ -->
+
+* $I$: an image on a domain $\Omega$. $g$: an edge indicator function to smooth image$^1$: 
+  $$g \equiv  \frac{1}{1+ |\nabla G_\sigma * I|}$$
+  **Note**: $g$ usually takes smaller values at object boundaries than at other locations.
+* Total Energy functional $E_\phi$: 
   $$E(\phi) = \mu R_p(\phi) + \lambda L_g(\phi) + \alpha A_g(\phi)$$
-* $L_g(\phi)$: the line integral of $g$ along zero level contour of $\phi$
-$$L_g(\phi) \equiv \int_\Omega g\delta(\phi)|\nabla \phi| \, \mathrm{d}\mathbf{x}$$
-* $A_g(\phi)$: a weighted area of $\{\mathbf{x}:\phi(\mathbf{x})<0\}$ to speed up evolution process
+* $L_g(\phi)$: the line integral of $g$ along zero level contour of $\phi$:
+  $$L_g(\phi) \equiv \int_\Omega g\delta(\phi)|\nabla \phi| \, \mathrm{d}\mathbf{x}$$
+  **Note**: $L(\phi)$ is minimized when the zero level contour of $\phi$ is located at the object boundaries$^1$.
+* $A_g(\phi)$: a weighted area of $\{\mathbf{x}:\phi(\mathbf{x})<0\}$ to speed up evolution process:
   $$A_g(\phi) \equiv \int_\Omega gH(-\phi)\, \mathrm{d}\mathbf{x}$$
 
 ---
 # Gradient Flow Function
 
-This energy functional can be minimized by solving the following
-gradient flow:
+This energy functional can be minimized by solving the following gradient flow:
 $$
 \boxed{\phi_t = \mu \mathrm{div} (d_p(|\nabla \phi|)\nabla \phi) + \lambda \delta(\phi) \mathrm{div}\left(g \frac{\nabla \phi}{|\nabla \phi|}\right) + \alpha g \delta(\phi)}
 $$
+
+2D case:
+- Approximate spatial derivatives $\partial_x \phi$ and $\partial_y \phi$ by **central differences**.
+- Approximate $\partial_t \phi$ by the **forward difference**.
 
 
 ---
@@ -155,7 +168,7 @@ $$
 |![](gourd.bmp) |  ![gourd.bmp](https://i.ibb.co/18ZXw3Y/Figure-2.png) | ![gourd.bmp](https://i.ibb.co/G5kqjVc/Figure-1.png) |
 
 
-[Video](./myvideo.html)
+[Video](./ground.html)
 
 ---
 # Experiment Results (2) 
@@ -165,3 +178,12 @@ $$
 | ![](twocells.bmp) | ![gourd.bmp](https://i.ibb.co/4MgG7fD/1-Figure-2.png)| ![gourd.bmp](https://i.ibb.co/0YNX97S/1-Figure-1.png)|
 
 [Video](./twocell.html)
+
+---
+
+# Comments 
+
+- DRLSE formulation has an **intrinsic** capability of maintaining regularity of the level set function, *particularly the desirable signed distance property in a vicinity of the zero level set*.
+- Demo: an edge-based active contour model for image segmentation. Easy to implement, runs fast, not so many paramenters.
+# Thank You!
+
