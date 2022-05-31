@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 _class: lead
 paginate: true
 backgroundColor: #fff
