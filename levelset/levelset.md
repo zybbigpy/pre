@@ -4,12 +4,23 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 ---
+<style>
+section { 
+    font-size: 22px; 
+}
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+<style scoped>section { font-size: 30px; }</style>
 
 # Distance Regularized Level Set Evolution and Its Application to Image Segmentation
 
-### Wangqian Miao, Materials Dept, UCSB
-### 06/2022
->C. Li, C. Xu, C. Gui and M. D. Fox, "Distance Regularized Level Set Evolution and Its Application to Image Segmentation," in IEEE Transactions on Image Processing, vol. 19, no. 12, pp. 3243-3254, Dec. 2010, doi: 10.1109/TIP.2010.2069690.
+*Wangqian Miao*
+*Materials Dept, UCSB*
+06/2022
+> *C. Li, C. Xu, C. Gui and M. D. Fox,* "Distance Regularized Level Set Evolution and Its Application to Image Segmentation," *doi: 10.1109/TIP.2010.2069690.*
 
 ---
 
@@ -36,6 +47,7 @@ $$\boxed{\partial_t \phi = -F|\nabla\phi|}$$
 
 ---
 # Motivation
+
 We need to maintain the LSF in a good condition, not too steep and too flat.
 - Sign distance funciton: $|\nabla\phi|=1$ 
 - A standard method: $\phi_t = \mathrm{sign}(\phi)(1-|\nabla\phi|)$
@@ -44,9 +56,8 @@ We need to maintain the LSF in a good condition, not too steep and too flat.
 
 **What the authors do**: Design a *general variational level set formulation*:
   - Instead of design $F$ $\rightarrow$ use a energy variantional scheme
-
-  - Distance regularization term $\rightarrow$ keep the property of LSF.
-  - External Energy term $\rightarrow$ guide the motion of zero level set.
+    - Distance regularization term $\rightarrow$ keep the property of LSF.
+    - External Energy term $\rightarrow$ guide the motion of zero level set.
 
 ---
 
@@ -65,6 +76,7 @@ $$E(\phi) = \mu R_p(\phi) + E_{\mathrm{ext}}(\phi)$$
 
 
 # Distance Regularization Effect
+
 Gradient flow of $\mu R(\phi)$ 
 $$ \phi_t =-\mu \partial_\phi R= \mu \mathrm{div}(d_p(|\nabla\phi|)\nabla\phi)$$
 Expressed in the form of a diffusion equation:
@@ -79,9 +91,9 @@ Diffusion rate $D= \mu d_p(|\nabla \phi|)$:
 ---
 # How to design energy density function $p$
 
-- A naive choice $p_s = s^2/2$
+* A naive choice $p_s = s^2/2$
   - A strong smoothing effect, flatten the LSF, cannot maintain signed distance property $|\nabla\phi|=1$.
-- Another choice $p_s = (s-1)^2/2$
+* Another choice $p_s = (s-1)^2/2$
     - $|\nabla \phi|>1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is positive, diffusion is forward, decreases  $|\nabla \phi|$.
     - $|\nabla \phi|<1$, diffusion rate $\mu d_p(|\nabla\phi|)$ is negative, diffusion is backward, increases  $|\nabla \phi|$.
     - Problem: (Unbounded) $\mu d_p(|\nabla \phi|) = \mu(1-(1/|\nabla\phi|)$ goes to negative infinity when $|\nabla\phi|\rightarrow 0$
@@ -97,32 +109,32 @@ Design a double well energy density function $p(s)$:
 - Diffusion rate is bounded
   $|\mu d_p(|\nabla\phi|)\leq \mu$
 
-![bg right w:14cm](p.png)
+![bg fit right w:14cm](p.png)
 
 ---
 # <!-- fit -->  Double Well Energy Density Function
-- For $|\nabla \phi| >1$, diffusion rate $D>0$, forward diffusion, decreases $|\nabla \phi|$.
-- For $1/2<|\nabla \phi| <1$, diffusion rate $D<0$, backward diffusion, increases $|\nabla \phi|$.
-- For $|\nabla \phi| <1/2$, diffusion rate $D>0$, forward diffusion, decreases $|\nabla \phi| \rightarrow 0$.
-![bg right w:14cm](dd.png)
+* For $|\nabla \phi| >1$, diffusion rate $D>0$, forward diffusion, decreases $|\nabla \phi|$.
+* For $1/2<|\nabla \phi| <1$, diffusion rate $D<0$, backward diffusion, increases $|\nabla \phi|$.
+* For $|\nabla \phi| <1/2$, diffusion rate $D>0$, forward diffusion, decreases $|\nabla \phi| \rightarrow 0$.
+![bg fit right w:14cm](dd.png)
 
 ---
 
 # Reinitialization Experiment
 
-![](dis_reg.png)
+![center fit](dis_reg.png)
 
 ---
 # Applicaiton: Edge Based Image Segmentation
-- $I$: an image on a domain $\Omega$. $g$: an edge Indicator function to smooth image: 
+* $I$: an image on a domain $\Omega$. $g$: an edge Indicator function to smooth image: 
 $$
 g \equiv  \frac{1}{1+ |\nabla G_\sigma * I|}
 $$
-- Total Energy functional $E_\phi$ 
+* Total Energy functional $E_\phi$ 
   $$E(\phi) = \mu R_p(\phi) + \lambda L_g(\phi) + \alpha A_g(\phi)$$
-- $L_g(\phi)$: the line integral of $g$ along zero level contour of $\phi$
+* $L_g(\phi)$: the line integral of $g$ along zero level contour of $\phi$
 $$L_g(\phi) \equiv \int_\Omega g\delta(\phi)|\nabla \phi| \, \mathrm{d}\mathbf{x}$$
-- $A_g(\phi)$: a weighted area of $\{\mathbf{x}:\phi(\mathbf{x})<0\}$ to speed up evolution process
+* $A_g(\phi)$: a weighted area of $\{\mathbf{x}:\phi(\mathbf{x})<0\}$ to speed up evolution process
   $$A_g(\phi) \equiv \int_\Omega gH(-\phi)\, \mathrm{d}\mathbf{x}$$
 
 ---
