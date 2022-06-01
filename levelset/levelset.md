@@ -36,7 +36,7 @@ $F$ is the speed function controls the motion of $C$, $\mathcal{N}$ is the inwar
 ---
 # The Level Set Method
 
-<!-- _footer: V. Caselles, 1993. R. Malladi, 1995. -->
+<!-- _footer: V. Caselles et al, 1993. R. Malladi et al, 1995. -->
 The curve (or the interface) evolves according to:
 $$\frac{\partial C(s, t)}{\partial t} = F \mathcal{N}$$
 At all times the interface is the zero level set of $\phi$:
@@ -69,10 +69,10 @@ $$E(\phi) = \mu R_p(\phi) + E_{\mathrm{ext}}(\phi)$$
 - Distance regularization term $R_p(\phi)\rightarrow$ keep the property of LSF. ($\mu > 0$)
   $$ R_p(\phi) =\int_\Omega p(|\nabla\phi|) \,\mathrm{d}\mathbf{x}$$
   $p$ is energy density function.
-- External Energy term $E_{\mathrm{ext}}(\phi), \rightarrow$ guide the motion of zero level set.
+- External Energy term $E_{\mathrm{ext}}(\phi) \rightarrow$ guide the motion of zero level set.
 - Minimize $E(\phi)$ is to find the steady state solution of the gradient flow equation:
   $$ \boxed{\partial_t \phi = -\partial_\phi E}$$
-* **Note**: $\partial_\phi E$ is the steepest descent direction of the functional $E(\phi)$. The gradient flow is also called *steepest descent flow or gradient descent flow*.
+* **Note**: $-\partial_\phi E$ is the steepest descent direction of the functional $E(\phi)$. The gradient flow is also called *steepest descent flow or gradient descent flow*.
 
 ---
 
@@ -88,7 +88,7 @@ Diffusion rate $D= \mu d_p(|\nabla \phi|)$:
 * **Forward-and-Backward (FAB) diffusion**: 
   * $D$ is positive, diffusion is **forward diffusion** $\rightarrow$ **decreases** $|\nabla \phi|$.
   * $D$ is negative, diffusion is **backward diffusion** $\rightarrow$ **increases** $|\nabla \phi|$. 
-  * Force $|\nabla \phi|$ to be close to one of the minimum points of the potential function $p(s)$
+  * Force $|\nabla \phi|$ to be close to one of the minimum points of the density function $p(s)$
 
 
 ---
@@ -133,7 +133,7 @@ Design a double well energy density function $p(s)$:
 ---
 # Applicaiton: Edge Based Image Segmentation
 
-<!-- _footer: 'Caselles et al. 93/97, Caselles et al. 95, Kichenassamy et al. 95' 
+<!-- _footer: 'Caselles et al. 93,95,97, Kichenassamy et al. 95' 
  -->
 
 * $I$: an image on a domain $\Omega$. $g$: an edge indicator function to smooth image$^1$: 
@@ -183,7 +183,9 @@ $$
 
 # Comments 
 
-- DRLSE formulation has an **intrinsic** capability of maintaining regularity of the level set function, *particularly the desirable signed distance property in a vicinity of the zero level set*.
-- Demo: an edge-based active contour model for image segmentation. Easy to implement, runs fast, not so many paramenters.
+* DRLSE formulation has an **intrinsic** capability of maintaining regularity of the level set function, *particularly the desirable signed distance property in a vicinity of the zero level set*.
+* Demo: an edge-based active contour model for image segmentation. Easy to implement, runs fast, not so many paramenters.
+* Works well on grayscale picture. How about other situation? Imagine a scenario you need to separate people from a group of cats?
+---
 # Thank You!
 
