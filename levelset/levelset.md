@@ -15,7 +15,7 @@ img[alt~="center"] {
 </style>
 <style scoped>section { font-size: 30px; }</style>
 
-# Distance Regularized Level Set Evolution and Its Application to Image Segmentation
+# Atomic Planewave Expansion for Subband Strucuture Calculations in Moiré System
 
 *Wangqian Miao*
 *Materials Dept, UCSB*
