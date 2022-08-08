@@ -1,3 +1,4 @@
 index.md
 .DS_Store
 *.pdf
+.tmp*
