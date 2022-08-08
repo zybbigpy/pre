@@ -5,6 +5,11 @@ paginate: true
 backgroundColor: #fff
 math: mathjax
 ---
+<!-- footer: 'Wangqian Miao | GS$^3$ Seminar | 10th, Aug, 2022' -->
+<!-- 
+_class: lead
+_paginate: false
+ -->
 <style>
 section { 
     font-size: 22px; 
@@ -16,63 +21,68 @@ img[alt~="center"] {
 </style>
 <style scoped>section { font-size: 30px; }</style>
 
-# Atomic Planewave Expansion for Subband Strucuture Calculations in Moiré Systems
 
-*Wangqian Miao, supervised by Prof. Xi Dai.*
+
+![bg 75% right](twisted_bilayer_graphene.png)
+## Atomic Planewave Expansion for Subband Structure Calculations in Moiré Systems
+
+*Wangqian Miao,*
+*Prof. Xi Dai Group,*
 *Materials Dept, UCSB.*
-*GS$^3$ Seminar, 10th, Aug, 2022*
 
 ---
 
 # Introduction
-<!-- _footer: 'Cao, Nature, 2018' -->
+<!-- _footer: 'Cao, Nature, 2018' Twisted -->
 
 
-Twited Bilayer Graphene (TBG)
+Twisted Bilayer Graphene (TBG)
 
 In this presentation:
 - How to calculate the band structure
 
 ---
+
 # Structure of Twisted Bilayer Graphene
+
 <!-- _footer: 'Kane, PRB, 2013' -->
 
 
-Start from a A-A stacking Bilayer Graphene and rotate.
+Start from an A-A stacking Bilayer Graphene and rotate.
 - AA stacking point: $D_3$ point group symmetry.
 - Hexagonal center: $D_6$ point group symmetry.
 
-A series of rotation angles will genarate a commusurate strucuture:
-
-- magic angle: around 1$^\circ$.
   
 ---
 
 # Moire Pattern
 
-* When the rotation angle is small, moire pattern emergies.
-* Extremlly large unit cell.
-* Contains more than 10,000 atoms in a unit cell at first magic angle.
-* Challege:
-    - How to determine the band strucuture?
+* Commensurate structure.
+* Rotation angle small, moire pattern emerges.
+* At the first magic angle:
+  * Extremely large unit cell.
+  * Contains more than 10,000 atoms in a unit cell at the first magic angle.
+  * Challenges:
+    - How to determine the band structure?
     - How to build an effective model Hamiltonian?
-  
-![bg fit right](moire_30_realspace.png)
+
+![bg 85% right](moire_30_realspace.png)
 
 ---
 # Band Structure Calculations
 <!-- _footer: 'B&M, PNAS, 2010. Koshino, PRB, 2015, NJP, 2015, PRX, 2017.' -->
 
-- **Density Functional Theory**
+* **Density Functional Theory**
   - Accurate but hard to perform
-- **Tight Binding**
+* **Tight Binding**
   - Slater Koster Scheme
   - Ab initio Scheme
-- **Continuum Model**
+* **Continuum Model**
   - Rafi Bistritzer and Allan H. MacDonald.
-  - Simple but caputure the most important physics.
-  - Conserve highest symmetry of the system.
+  - Simple but capture the most important physics.
+  - Conserve the highest symmetry of the system.
   
+
 Expectation from Physicists
 * Not only good band structures but also effective Hamiltonian.
 
@@ -81,14 +91,10 @@ Expectation from Physicists
 # A Textbook Formalism: Slater Koster Tight Binding
 
 * Construct Bloch wave function:
-$$
-\psi(\mathbf{k}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}e^{\mathrm{i}\mathbf{k}\cdot{(\mathbf{R}_{\mathrm{I}}+\tau_{i_\alpha})}} \phi_{p_z}(\mathbf{r}-\mathbf{R}_{\mathrm{I}}-\tau_{i_\alpha})
-$$
+$$\psi(\mathbf{k}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}e^{\mathrm{i}\mathbf{k}\cdot{(\mathbf{R}_{\mathrm{I}}+\tau_{i_\alpha})}} \phi_{p_z}(\mathbf{r}-\mathbf{R}_{\mathrm{I}}-\tau_{i_\alpha})$$
 * Hopping integral determined by SK-formula:
-$$
-t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^2},
-$$
-where $r_z = \mathbf{r} \cdot \mathbf{e}_z, V_\pi = V_\pi^0 e^{-(r-a_0)/r_0}, V_\sigma = V_\sigma^0 e^{-(r-d_0)/r_0}.$
+$$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^2},$$
+* $r_z = \mathbf{r} \cdot \mathbf{e}_z, V_\pi = V_\pi^0 e^{-(r-a_0)/r_0}, V_\sigma = V_\sigma^0 e^{-(r-d_0)/r_0}.$
 * $\approx 10,000$ atoms. TB matrix $10,000 \times 10,000$. 
   * A long time to diagonalization, but practical. Lancoz algorithm.
   * Hard to perform further calculation.
@@ -98,17 +104,13 @@ where $r_z = \mathbf{r} \cdot \mathbf{e}_z, V_\pi = V_\pi^0 e^{-(r-a_0)/r_0}, V_
 Some Key ideas:
 
 
-* Construct Bloch wavefunction for each layer:
-$$
-  \begin{eqnarray}
-    \psi_{\mathbf{k},\alpha}^{(1)}(\mathbf{r}) &= \frac{1}{\sqrt{N}} \sum_{\mathbf{r}u_\alpha} \mathrm{e}^{\mathrm{i} \mathbf{k} \cdot \mathbf{r}^{(1)}_\alpha} \phi_{p_z}(\mathbf{r}-\mathbf{r}^{(1)}_\alpha), \\
-    \psi_{\mathbf{p},\beta}^{(2)} (\mathbf{r})&= \frac{1}{\sqrt{N}} \sum_{\mathbf{r}u_\beta} \mathrm{e}^{\mathrm{i}\mathbf{p}\cdot \mathbf{r}^{(2)}_\beta} \phi_{p_z}(\mathbf{r}-\mathbf{r}^{(2)}_\beta).
-  \end{eqnarray}
-$$
+- Construct Bloch wavefunction for each layer:
+$$\begin{eqnarray}
+\psi_{\mathbf{k},\alpha}^{(1)}(\mathbf{r}) &= \frac{1}{\sqrt{N}} \sum_{\mathbf{r}u_\alpha} \mathrm{e}^{\mathrm{i} \mathbf{k} \cdot \mathbf{r}^{(1)}_\alpha} \phi_{p_z}(\mathbf{r}-\mathbf{r}^{(1)}_\alpha), \\
+\psi_{\mathbf{p},\beta}^{(2)} (\mathbf{r})&= \frac{1}{\sqrt{N}} \sum_{\mathbf{r}u_\beta} \mathrm{e}^{\mathrm{i}\mathbf{p}\cdot \mathbf{r}^{(2)}_\beta} \phi_{p_z}(\mathbf{r}-\mathbf{r}^{(2)}_\beta).
+\end{eqnarray}$$
 * Fourier Transform the hopping integral $\rightarrow$ momentum conservation law of moire system.
-$$
-\boxed{\mathbf{k}=\mathbf{p}-m_1 \mathbf{G}_1-m_2 \mathbf{G}_2,}
-$$
+$$\boxed{\mathbf{k}=\mathbf{p}-m_1 \mathbf{G}_1-m_2 \mathbf{G}_2,}$$
 
 ---
 
@@ -121,6 +123,7 @@ Some Key ideas:
 * Interlayer coupling $U$:
   * Conserve three largest $\mathbf{k}-\mathbf{p}$ coupling using symmetry analysis
   * Varies smoothly in the moire scale.
+    * Continuum description
 
 ![bg 65% right](cont.svg)
 
@@ -144,7 +147,6 @@ Some Key ideas:
   }
   $$
 * The matrix element of the Hamiltonian $H_{\alpha n, \beta m}$:
-
 $$
 \begin{equation}
 \begin{aligned}
@@ -161,17 +163,9 @@ $$
 # Tight Binding Planewave Expansion
 
 - A more compact expression
-$$
-\boxed{
-\begin{equation}
-\begin{aligned}
-\mathbf{H}_{\alpha\beta} &= \frac{1}{N_{\mathrm{a}}}\mathbf{X}^\dagger_{\alpha} \mathbf{T}_{\alpha\beta} \mathbf{X}_{\beta},
-\label{eq:Hmat}
-\end{aligned}
-\end{equation}
-}
-$$
-the corresponding matrix elements:
+$$\boxed{\mathbf{H}_{\alpha\beta} = \frac{1}{N_{\mathrm{a}}}\mathbf{X}^\dagger_{\alpha} \mathbf{T}_{\alpha\beta} \mathbf{X}_{\beta}.}$$
+
+- corresponding matrix elements:
 $$
 \begin{equation}
 \begin{aligned}
@@ -184,7 +178,7 @@ $$
 $$
 * Concrete meaning:
   * $\mathbf{T}_1$: hopping phase. $\mathbf{T}_2$ hopping integral. 
-  * $\mathbf{T}_1*\mathbf{T}_2$:  <font color=red>**Full TB matrix**</font>!
+  * $\mathbf{T}_1*\mathbf{T}_2$:  <font color=red>Full TB matrix</font>!
   * $\mathbf{X}$: Planewave projector.
 
 ---
@@ -197,26 +191,43 @@ $$
   * MATBG: (11164, 11164) $\rightarrow$ (244, 244) per valley.
 * The construction of *Planewave projector* $\mathbf{X}$ and *hopping integral* $\mathbf{T}_2$ is only once!
 * $\mathbf{T}_1 * \mathbf{T}_2$ element-wise production.
-![bg fit right](benchmark.png)
+![bg 90% right](benchmark.png)
 
 
 ---
-# Band Strucuture Results
+# Band Structure Results
+
+Compared with Full Tight Binding results
 
 ---
 
-# Detailed Descripstion of Moire Potential
+#
+![](band.png)
 
+---
+
+# Detailed Description of Moire Potential
+
+- In Continuum Model:
+  * Three largest component
+  $$U(\mathbf{r})=U_0 + U_1 \mathrm{e}^{\mathrm{i}\mathbf{G}_1\cdot\mathbf{r}}+U_2\mathrm{e}^{-\mathrm{i}\mathbf{G}_2\cdot\mathbf{r}}$$
+- In tight binding planewave expansion:
+  * Tensor form: $U_{\bar{\mathbf{k}}}(\mathbf{G}_n, \mathbf{G}_m)$
+  * $\mathbf{k}$-dependant ($\bar{\mathbf{k}}+\mathbf{G}_m = \mathbf{k}$)
+  * High Order $\mathbf{G}$ component
+---
+
+![](moire_potential.png)
 
 ---
 
 # Some Comments 🤔 
 
-- How to design $\mathbf{T}_2$?
-  * Slater Koster
+- How to design hopping integral $\mathbf{T}_2$?
+  * Slater Koster scheme
     * Setup neighbours using KDTree. 
     * `Numpy` broadcasting.
-  * Ab initio TB.
+  * Ab initio TB scheme
 - Only the band strucute of TBG?
   * The projection process is general!
   * Moire phonon bands, relaxed moire strucuture.
