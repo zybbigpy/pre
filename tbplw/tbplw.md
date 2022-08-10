@@ -30,20 +30,21 @@ img[alt~="center"] {
 *Prof. Xi Dai Group,*
 *Materials Dept, UCSB.*
 
+
 ---
 
 # Introduction and Outline
 <!-- _footer: 'Cao, Nature, 2018' Twisted -->
 
 
-Twisted Bilayer Graphene (TBG) ,a platform to realize novel quantum phenomena. [Cao, 2018.]()
+Twisted Bilayer Graphene (TBG), a platform to realize novel quantum phenomena. [Cao, 2018.]()
 - Superconductivity. 
 - Orbital magnetism.
 - Correlated insulating phase.
 - ....
 
 **In this presentation**:
-- Several methods to calculate the band strucuture.
+- Several methods to calculate the related band strucuture.
 - Tight Binding Planewave Projection formalism.
 - Some results and commments
 
@@ -85,7 +86,7 @@ Twisted Bilayer Graphene (TBG) ,a platform to realize novel quantum phenomena. [
 * **Continuum Model**: [B&M, 2010; Santos, 2012; Koshino, 2013, 2015, 2018.]()
   - Rafi Bistritzer and Allan H. MacDonald.
   - Simple but capture the most important physics.
-  - Not so accurate even some corrected model. [S. Carr, 2019; Koshino, 2020.]()
+  - Not so accurate even with some corrected models. [S. Carr, 2019; Koshino, 2020.]()
 * **Expectations from Physicists**
   - Not only *good band structures* but also *effective Hamiltonian*.
   - *Gap*: How to balance ...
@@ -93,9 +94,9 @@ Twisted Bilayer Graphene (TBG) ,a platform to realize novel quantum phenomena. [
 
 # A Textbook Formalism: Slater Koster Tight Binding
 
-* Construct Bloch wave function:
-$$\psi(\mathbf{k}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}e^{\mathrm{i}\mathbf{k}\cdot{(\mathbf{R}_{\mathrm{I}}+\tau_{i_\alpha})}} \phi_{p_z}(\mathbf{r}-\mathbf{R}_{\mathrm{I}}-\tau_{i_\alpha})$$
-* Hopping integral determined by SK-formula:
+- Construct Bloch wave function:
+$$\psi(\mathbf{k}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}e^{\mathrm{i}\bar{\mathbf{k}}\cdot{(\mathbf{R}_{\mathrm{I}}+\tau_{i_\alpha})}} \phi_{p_z}(\mathbf{r}-\mathbf{R}_{\mathrm{I}}-\tau_{i_\alpha})$$
+- Hopping integral determined by SK-formula:
 $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^2},$$
 * $r_z = \mathbf{r} \cdot \mathbf{e}_z, V_\pi = V_\pi^0 e^{-(r-a_0)/r_0}, V_\sigma = V_\sigma^0 e^{-(r-d_0)/r_0}.$
 * $\approx 10,000$ atoms. TB matrix $10,000 \times 10,000$. 
@@ -136,6 +137,19 @@ $$\boxed{\mathbf{k}=\mathbf{p}-m_1 \mathbf{G}_1-m_2 \mathbf{G}_2.}$$
 ![center](tbg.svg)
 
 ---
+# Success of Continuum Model, But ...
+
+- Extremely simple Hamiltonian
+  - In  B&M's original paper $\rightarrow$ 6 bands model (per valley)
+  - predict flat bands
+- But...
+  * Particle hole symmetry?
+  * Accuracy? Remote bands? ([Koshino and S. Carr]())
+  * Relaxation effect (no atomic configuration)?
+
+![bg 70% right](cont.png)
+
+---
 # Tight Binding Planewave Expansion: Motivation
 
 - Two kinds of periodicity in Moiré system.
@@ -154,7 +168,7 @@ $$
 \begin{equation}
 \begin{aligned}
   &\bra{\psi_{\alpha,n}(\bar{\mathbf{k}})}{\hat{H}}\ket{\psi_{\beta,m}(\bar{\mathbf{k}})} \\
-=& \frac{1}{N_\mathrm{m} N_\mathrm{a}} \sum_{\mathrm{I} \mathrm{I},ij} t(\mathbf{r}_{\mathrm{I} i \alpha}-\mathbf{r}_{\mathrm{I} j \beta})
+=& \frac{1}{N_\mathrm{m} N_\mathrm{a}} \sum_{\mathrm{I} \mathrm{J},ij} t(\mathbf{r}_{\mathrm{I} i \alpha}-\mathbf{r}_{\mathrm{J} j \beta})
 \mathrm{e}^{-\mathrm{i}(\bar{\mathbf{k}}+\mathbf{G}_n)\mathbf{r}_{\mathrm{I} i \alpha}} \mathrm{e}^{\mathrm{i}(\bar{\mathbf{k}}+\mathbf{G}_m)\mathbf{r}_{\mathrm{I} j \beta}} \\
 =&\frac{1}{N_\mathrm{a}} \sum_{ij} \color{red}{\mathrm{e}^{-\mathrm{i} \mathbf{G}_n \tau_{i\alpha}}} \color{blue}{\mathrm{e}^{-\mathrm{i} \bar{\mathbf{k}} (\bar{\tau}_{i\alpha, j\beta})} 
 t(\bar{\tau}_{i\alpha, j\beta})} \color{red} {\mathrm{e}^{\mathrm{i} \mathbf{G}_m \tau_{j\beta}}}. \\
@@ -201,6 +215,10 @@ $$
 # Band Structure Results
 
 Compared with Full Tight Binding results
+* Highly consistent with full tight binding result.
+* Not only rigid structure, but also corrugated, relaxed structure.
+* a wide range of rotation angles.
+* (d)-(f) $3.0^\circ, 1.6^\circ, 1.0^\circ$.
 
 ---
 
@@ -236,9 +254,11 @@ Compared with Full Tight Binding results
   * The projection process is general.
   * Moiré phonon bands, relaxed Moiré structure.
 - Further Application?
-  * Electron-Electron intetaction.
+  * Electron-Electron interaction.
   * Electron-Phonon interaction (Frozen Phonon).
 ---
 # Thank You ! 🎉🎉🎉
 
 *Contact me through `wmiao@ucsb.edu` for any request!*
+*Code released soon, stay tuned.*
+![center w:900](github.png)
