@@ -250,7 +250,7 @@ Compared with Full Tight Binding results
     * Setup neighbours using KDTree. 
     * `Numpy` broadcasting.
   * Ab initio TB scheme
-- Only the band strucute of TBG?
+- Only the band structure of TBG?
   * The projection process is general.
   * Moiré phonon bands, relaxed Moiré structure.
 - Further Application?
