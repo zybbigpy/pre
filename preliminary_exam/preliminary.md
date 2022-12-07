@@ -26,7 +26,7 @@ img[alt~="center"] {
 
 # Lattice Reconstruction and Moiré Phonons in Twisted Bilayer Graphene
 
-*Wangqian Miao*
+Wangqian Miao
 
 
 ---
@@ -37,7 +37,7 @@ img[alt~="center"] {
 
 Twisted Bilayer Graphene (TBG), a platform to realize novel quantum phenomena. [Cao, Nature, 2018.]()
 - Superconductivity, Orbital magnetism, Correlated insulating phase.
-- [Lu, Nature, 2019](), `BI`: Band Insulator, `SC`: Superconductivity, `CS`: Correlated State.
+- [Lu, Nature, 2019](), `BI`: Band Insulator, `SC`: Superconductor, `CS`: Correlated State.
 ![center w:750](assets/sc.svg)
 
 
@@ -45,22 +45,21 @@ Twisted Bilayer Graphene (TBG), a platform to realize novel quantum phenomena. [
 # Outline
 
 **In this presentation**:
-Single particle picture
-- Lattice Reconstruction in TBG
+In a single particle picture to explain some insulating phase.
+- Lattice reconstruction in TBG
   - Insulator at $n=\pm 4$
-- Moiré Phonons
-  - iTO Phonons induced distortion
-  - Insulator at other integer filling
+- Displacement induced by moiré phonons
+  - Insulator at some other integer fillings
 
 ---
 
 # Structure of Twisted Bilayer Graphene
 
 
-- Start from an AA stacking Bilayer Graphene and twist.
-- Moiré Pattern at small twist angle.
+- Start from an AA stacking Bilayer Graphene and twist
+- Moiré Pattern at small twist angle
 - **AA, AB, BA, SP(DW)** stacking area.  
-- $D_6$ point group symmetry: $C_{3z}, C_{2x}, C_{2y}$.
+- $D_6$ point group symmetry: $C_{3z}, C_{2x}, C_{2y}$
 ![center w:850](assets/stacking.svg)
   
 ---
@@ -71,20 +70,20 @@ Single particle picture
   - Start Point is a rigid structure. 
   - There are still Dirac Nodes.
   - There are **magic angles** where Fermi velocity vanishes.
-  - No Band Gap at magic angle.
+  - No band gap at magic angle from DOS.
 - **Question**: In experiments, MATBG is insulating at $n=\pm 4$, confilts with the band theory.
 ![center w:800](assets/BM.svg)
 
 ---
 # Lattice Reconstruction in TBG
 
-- **Small Scale DFT calculation for bilayer graphene system [Gargiulo etc, 2018 2D Mater. 5 015019]()**
+- **Small scale DFT calculation for bilayer graphene system [Gargiulo etc, 2018 2D Mater. 5 015019]()**
   - AB/BA stacking and SP(DW) areas are more energetically favorable.
 - How about atomic relaxation in TBG?
   - *Competition* of minimization of interlayer energy and the reaction of in plane strain field.
-  - Numerical Modeling:
+  - Numerical Modeling, *~10,000 atoms or even more in a lattice*.
     - Density Functional Theory $\rightarrow$ vdW functional, hard to perform.
-    - Molecular Dynamics $\rightarrow$ classical force field fitted from small scale DFT.
+    - Molecular Dynamics $\rightarrow$ modern force field fitted from small scale DFT.
     - Continuum Theory $\rightarrow$ empirical elastic theory.
 
 ![center w:560](assets/dft.svg)
@@ -146,7 +145,7 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
     - AA stacking area will shrink, AB/BA stacking area expand, sharp DW area
     -  Corrugation effect
     - Open band gap, stabelize the first magic angle
-* How about phonons?
+* How about displacement induced by phonons?
 ---
 
 # Phonons
@@ -154,38 +153,33 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
 **How to solve moiré phonon problem in TBG?**
 
 - Have a relaxed strucuture, use MD
-- Calculate Force constant by Frozen Phonon method
+- Calculate force constant by frozen phonon method
   - Force constant $\Phi$
    $$\Phi(\mathbf{r}_i-\mathbf{r}_j)=\frac{\partial^2 U}{\partial \mathbf{r}_i \partial \mathbf{r}_j} = - \frac{\partial \mathbf{F}_{j}}{\partial \mathbf{r}_i}$$
   - Fourier Transform $\rightarrow$ Dynamic matrix $\mathbf{D}(\mathbf{q})$
 - Diagonalize $\mathbf{D}(\mathbf{q})$ $\rightarrow$    
-  - Phonon Bands: $\omega(\mathbf{q})$
-  - Polarization Vector: $\mathbf{u}(\mathbf{q})$ 
-
----
-
-# Low Frequency Moiré Phonons
-
-**[Liu etc, Nano Lett. 2022, 22, 19, 7791–7797]()**
-
-![](assets/low_phonon.svg)
+  - Phonon bands: $\omega(\mathbf{q})$
+  - Polarization vector: $\mathbf{u}(\mathbf{q})$, characteristic vibrational mode
 
 ---
 
 # $U_v(1)$ symmetry 
+**Valley Jahn-Teller Effect in TBG,   [Angeli etc, P.R.X, 9, 041010]().**
 - Valley decoupled, emergent $U_v(1)$ symmetry.
-- Accidential symmetry along $C_{2y}$ invariant line.
-  - $T_3 = \sigma_0 \tau_3 \mu_0/2, T_1 = \sigma_1\tau_1\mu_3/2, T_2 = \sigma_1 \tau_2 \mu_3/2$ 
+- Accidential symmetry along $C_{2y}$ invariant line: $M-K, K-\Gamma$
+  - $SU(2)$ algebra: $T_3 = \sigma_0 \tau_3 \mu_0/2, T_1 = \sigma_1\tau_1\mu_3/2, T_2 = \sigma_1 \tau_2 \mu_3/2$ 
   -  $\sigma$: moire sublattice, $\tau$ valley space, $\mu$: $C_x=\pm 1$ space.
-* How to break this accidential symmetry?
-  * Coulomb Interaction can do.
-  * How about lattice distortion?
 ![center w:850](assets/uv1.svg.png)
+
+* How to break this accidential symmetry to get insulating phase?
+  * Coulomb interaction can do.
+  * How about lattice distortion induced by phonons?
 
 ---
 
 # High Frequency Moiré Phonons
 **Valley Jahn-Teller Effect in TBG,   [Angeli etc, P.R.X, 9, 041010]().**
+
 - Calculate phonon spectrum comprising 33492 modes
 - Some special modes that resemble global vibrations of the moire supercell, as a ultralarge molecule
 - These modes have the same accidental double degeneracy as the electonic bands
@@ -196,7 +190,7 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
 ---
 # Real Space Distortion and Frozen Phonon Band
 
-- iTO like vibrations localized at AA stacking area and DW area.
+- Frozen phonon at $\Gamma$, iTO like vibrations localized at AA stacking area and DW area.
 - Frozen phonon band strucuture
   - Add displacement on the relaxed carbon atoms
   - Feed updated atom coordinates to atomistic TB model
@@ -224,7 +218,7 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
 ---
 # Insulating State at other Commensurate Fillings
 
-- Frozen two degenarate phonon at $M$ point
+- Frozen two degenarate phonons at $M$ point
 - Band Gap through DOS $n =\pm 2, \pm 4$
 ![center w:800](assets/frozen_phonon_m.svg)
 
@@ -233,11 +227,20 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
 
 **A more detailed calculation [Choi etc, P.R.B, 98, 241412(R), P.R.L. 127, 167001.]()**
 
-- Phonon D.O.S. at high frequency is almost the same as the one of AB stacking bilayer grphene.
+- Phonon D.O.S. at high frequency is almost the same as the one of AB stacking bilayer graphene.
   - Moire potential can be savely ignored.
-- Full electron phonon coupling strength hints strong coupling with iTO phonons (167meV and 197meV)
+- Full electron phonon coupling strength calculation hints strong coupling with iTO phonons (167meV and 197meV)
 
 ![bg 105% right:40%](assets/epc.svg)
+
+
+---
+
+# Low Frequency Moiré Phonons
+
+**[Liu etc, Nano Lett. 2022, 22, 19, 7791–7797]()**
+
+![](assets/low_phonon.svg)
 
 ---
 
