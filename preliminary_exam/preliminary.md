@@ -172,18 +172,6 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
 
 ---
 
-
-# High Frequency Moiré Phonons
-**Valley Jahn-Teller Effect in TBG,   [Angeli etc, P.R.X, 9, 041010]().**
-- Calculate phonon spectrum comprising 33492 modes
-- Some special modes that resemble global vibrations of the moire supercell, as a ultralarge molecule
-- These modes have the same accidental double degeneracy as the electonic bands
-- The degenarate phonon at $\Gamma$ comprises one $A_1$ mode even under $C_{2y}$ and the other $B_1$ mode odd.
-
-![bg 55% right:45%](assets/ito.svg)
-
----
-
 # $U_v(1)$ symmetry 
 - Valley decoupled, emergent $U_v(1)$ symmetry.
 - Accidential symmetry along $C_{2y}$ invariant line.
@@ -193,6 +181,17 @@ $$t(\mathbf{r}) = -V_\pi\left(1-\frac{r_z^2}{r^2}\right)-V_\sigma\frac{r_z^2}{r^
   * Coulomb Interaction can do.
   * How about lattice distortion?
 ![center w:850](assets/uv1.svg.png)
+
+---
+
+# High Frequency Moiré Phonons
+**Valley Jahn-Teller Effect in TBG,   [Angeli etc, P.R.X, 9, 041010]().**
+- Calculate phonon spectrum comprising 33492 modes
+- Some special modes that resemble global vibrations of the moire supercell, as a ultralarge molecule
+- These modes have the same accidental double degeneracy as the electonic bands
+- The degenarate phonon at $\Gamma$ comprises one $A_1$ mode even under $C_{2y}$ and the other $B_1$ mode odd.
+
+![bg 55% right:45%](assets/ito.svg)
 
 ---
 # Real Space Distortion and Frozen Phonon Band
